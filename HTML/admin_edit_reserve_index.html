@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Admin_reservation record</title>
+  <script src="./jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 点击后生成复选框
+                $.ajax({
+                    type: "GET",
+                    url: "./InquiryReserve.php",
+                    //data: fields, // 序列化表单值
+                    async: false,
+                    error: function (request) {
+                        alert("Wrong with the server!");
+                    },
+                    success: function (data) {
+                        var info = JSON.parse(data); // json object
+                        // console.log(JSON.stringify(info));
+                        if (info == "") {
+                            alert("空");
+                        } else {
+                            var output =
+                                "<form id='form1' onsubmit='return inquiry_reserve(this)'>";
+                            output += "<table class=\"table table-bordered\">";
+                            output +=
+                                "<thead><tr><th></th><th>RID</th><th>ISBN</th><th>COPY</th><th>EMAIL</th></tr></thead>";
+                            output += "<tbody>";
+                            $.each(info, function (i, value) {
+                                output += "<tr>";
+                                output +=
+                                    "<td> <input type='checkbox' name='returnBook[]' value='" +
+                                    value.RID + " " + value.ISBN + "'> </td>";
+                                output += "<td>" + value.RID + "</td>";
+                                output += "<td>" + value.ISBN + "</td>";
+								output += "<td>" + value.COPY + "</td>";
+								output += "<td>" + value.STIME + "</td>";
+                                output += "<td>" + value.EMAIL + "</td>";
+                                output += "</tr>";
+                            });
+                            output += "</tbody></table>";
+                            output += "<button type='submit'>Delete</button>";
+                            output += "</form>";
+                            $("#show1").html(output);
+                        }
+
+
+                    }
+                });
+
+        });
+
+        // 再次提交表单
+        function inquiry_reserve(form) {
+            var fields = $('#form1').serialize();
+			//console.log(fields);
+            $.ajax({
+                type: "POST",
+                url: "./EditReserve.php",
+                data: fields, // 序列化表单值
+                async: false,
+                error: function (request) {
+                    alert("Wrong with the sever!");
+                },
+                success: function (data) {
+				    alert(data);
+                    //console.log(data);
+					window.location.reload(); 
+                }
+            });
+            return false;
+        }
+    </script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="admin_edit_reserve_main.css">
+
+  
+</head>
+    <div class="home">
+        <ul>
+            <li><a href="admin_page_index.html">HOME</a ></li>
+        </ul>
+    </div>
+	
+<body>
+ 
+<div class="show1" id="show1">
+</div>
+ 
+  
+</body>
+</html>

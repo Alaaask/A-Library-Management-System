@@ -1,0 +1,45 @@
+body{
+    background: url(bookminusbackg.png);
+}
+
+.ISBN{
+  background-color: rgb(255, 255, 255);
+  font-family: "Andale Mono";
+  position: absolute;
+  left: 602px;
+  top: 381px;
+  width: 479px;
+  height: 69px;
+  z-index: 2;
+}
+
+.submit{
+  background-color: rgb(255, 255, 255);
+  font-family: "Andale Mono";
+  position: absolute;
+  left: 650px;
+  top: 420px;
+  width: 185px;
+  height: 68px;
+  z-index: 3;
+}
+
+.home ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0,0,0);
+  line-height: 1.2;
+  position: absolute;
+  left: 1198px;
+  top: 10px;
+  width: 112px;
+  height: 35px;
+  z-index: 4;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.home ul li a:hover{
+  opacity: 1;
+}

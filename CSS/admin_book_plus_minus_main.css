@@ -1,0 +1,43 @@
+ body{
+     background: url(bookplusminsback.png);
+}
+
+.bottonPlus{
+  background-image: url("book_plus.png");
+  position: absolute;
+  left: 357px;
+  top: 375px;
+  width: 150px;
+  height: 150px;
+  z-index: 2;
+}
+
+.bottonMinus{
+  background-image: url("book_minus.png");
+  position: absolute;
+  left: 854px;
+  top: 368px;
+  width: 196px;
+  height: 164px;
+  z-index: 3;
+}
+
+.home ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0,0,0);
+  line-height: 1.2;
+  position: absolute;
+  left: 1198px;
+  top: 10px;
+  width: 112px;
+  height: 35px;
+  z-index: 4;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.home ul li a:hover{
+  opacity: 1;
+}

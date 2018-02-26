@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Admin_latest history</title>
+      <script src="./jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "./LatestNotReturn.php",
+					async: false,
+                    //data:$("form").serialize(),
+                    error: function (request) {
+                        alert("Wrong with the server!");
+                    },
+                    success: function (data) {
+					    output = "";
+					    if (data == "0") {
+						    alert("No record.");
+						}
+					    else {
+						    var info = JSON.parse(data); // json object
+                            $.each(info, function (i, value) {
+							    output += "RID: "+value.RID+" ";
+                                output += "ISBN: "+value.ISBN+" ";
+								output += "Starttime: "+value.STIME+" ";
+                                output += "Endtime: "+value.ETIME+" ";
+                                output += "<br>";
+                            })
+						}
+						$("#show1").html(output);
+					}
+			})
+		})
+    </script>
+      <link rel="stylesheet" href="admin_latest_not_return_main.css">
+
+  
+</head>
+    <div class="home">
+        <ul>
+            <li><a href="admin_page_index.html">HOME</a ></li>
+        </ul>
+    </div>
+	
+<body>
+
+<header>
+    <nav class="navbar" role="navigation">
+    </nav>
+</header>
+
+<div id="show1" class="show1">
+</div>
+  
+  
+</body>
+</html>

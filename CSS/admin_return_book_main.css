@@ -1,0 +1,64 @@
+body{
+    background: url(admin_return_book.png);
+}
+
+.id{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 473px;
+  top: 328px;
+  width: 492px;
+  height: 73px;
+  z-index: 2;
+}
+
+.bkid{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 473px;
+  top: 435px;
+  width: 492px;
+  height: 73px;
+  z-index: 3;
+}
+
+.time{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 473px;
+  top: 542px;
+  width: 492px;
+  height: 73px;
+  z-index: 4;
+}
+
+.button{
+  position: absolute;
+  left: 648px;
+  top: 649px;
+  width: 146px;
+  height: 73px;
+  z-index: 5;
+}
+
+
+.home ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 1198px;
+  top: 10px;
+  width: 112px;
+  height: 35px;
+  z-index: 4;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+
+.home ul li a:hover{
+    opacity: 1;
+}

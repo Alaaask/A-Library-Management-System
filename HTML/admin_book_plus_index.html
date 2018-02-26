@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin_add a book</title>
+    <link href="admin_book_plus_main.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="home">
+        <ul>
+            <li><a href="admin_page_index.html">HOME</a ></li>
+        </ul>
+    </div>
+
+   <form action="Add books.php" method="post">
+       <div class="isbn">
+           ISBN : <input type="text" name="isbn">(NOT NULL)
+        </div>
+       <div class="title">
+           TITLE : <input type="text" name="bname">
+        </div>
+       <div class="author">
+           AUTHOR : <input type="text" name="author">
+        </div>
+       <div class="key_1">
+           KEY1 : <input type="text" name="key_1">
+       </div>
+       <div class="key_2">
+           KEY2 : <input type="text" name="key_2">
+       </div>
+       <div class="key_3">
+           KEY3 : <input type="text" name="key_3">
+       </div>
+       <div class="press">
+           PUBLISHER : <input type="text" name="press">
+       </div>
+        <div class="presstime">
+           PUBLISH TIME : <input type="text" name="ptime">
+       </div>
+      <div class="total">
+           TOTAL : <input type="text" name="total">(NOT NULL)
+       </div>
+      <div class="location">
+           LOCATION : <input type="text" name="locate">
+       </div>
+       <div class="submit">
+           <input type="submit" value="SUBMIT">
+       </div>
+    </form>
+</body>
+</html>

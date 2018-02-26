@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login in to the Library!</title>
+    <link href ="login_main.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand"></a>
+            </div>
+            <div class="collapse">
+                <ul class="navbar-right">
+                    <li><a href="sign_up_index.html">SIGN UP</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="login">
+        <div class="logini">
+            <form action="login_Reader.php" method="post">
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <input type="text" name="uid" class="form-control" required="required" placeholder="ID">
+                    </div>
+                <div class="col-md-12 col-sm-12">
+                    <input type="password" name="upwd" class="fromcontrol" required="required" placeholder="password">
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="SubBotton">
+                        <button type="submit" class="btn btn-success">SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

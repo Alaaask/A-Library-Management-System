@@ -1,0 +1,228 @@
+body{
+  background-image: url(admin2_.png);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+.home ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 1198px;
+  top: 10px;
+  width: 112px;
+  height: 35px;
+  z-index: 4;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.home ul li a:hover{
+    opacity: 1;
+}
+
+.boption_1 ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 553px;
+  top: 230px;
+  width: 400px;
+  height: 19px;
+  z-index: 2;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.boption_1 ul li a:hover{
+    opacity: 1;
+}
+
+.boption_2 ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 553px;
+  top: 275px;
+  width: 550px;
+  height: 19px;
+  z-index: 3;
+  opacity:.4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.boption_2 ul li a:hover{
+    opacity: 1;
+}
+
+.boption_3 ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 553px;
+  top: 315px;
+  width: 550px;
+  height: 19px;
+  z-index: 9;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.boption_3 ul li a:hover{
+    opacity: 1;
+}
+
+.coption_1 ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 553px;
+  top: 590px;
+  width: 300px;
+  height: 19px;
+  z-index: 7;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.coption_1 ul li a:hover{
+    opacity: 1;
+}
+
+.coption_2 ul li a {
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 553px;
+  top: 635px;
+  width: 500px;
+  height: 19px;
+  z-index: 8;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.coption_2 ul li a:hover{
+    opacity: 1;
+}
+
+.moption_1 ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 100px;
+  top: 375px;
+  width: 97px;
+  height: 19px;
+  z-index: 4;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.moption_1 ul li a:hover{
+    opacity:1;
+}
+
+.moption_2 ul li a {
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 100px;
+  top: 440px;
+  width: 96px;
+  height: 19px;
+  z-index: 5;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.moption_2 ul li a:hover{
+    opacity:1;
+}
+
+.moption_3 ul li a {
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 100px;
+  top: 490px;
+  width: 179px;
+  height: 19px;
+  z-index: 6;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.moption_3 ul li a:hover{
+    opacity:1;
+}
+
+.moption_4 ul li a {
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 100px;
+  top: 545px;
+  width: 97px;
+  height: 19px;
+  z-index: 5;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.moption_4 ul li a:hover{
+    opacity:1;
+}
+
+.moption_5 ul li a {
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 100px;
+  top: 590px;
+  width: 280px;
+  height: 19px;
+  z-index: 2;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.moption_5 ul li a:hover{
+    opacity:1;
+}
+

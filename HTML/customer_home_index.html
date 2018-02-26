@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Library</title>
+    <link href ="customer_home_main.css" rel="stylesheet">
+
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "Search Books.php",
+                    async: false,
+                    data: $("form").serialize(),
+                    error: function (request) {
+                        alert("ERROR");
+                    },
+                    success: function (data) {
+                        var info = JSON.parse(data);
+                        if (info == "") {
+                            alert("No records!");
+                        } else {
+                            var output = "<form id='form1' onsubmit='return inquiry_reserve(this)'>";
+                            output += "<table class=\"table table-bordered\">";
+                            output +=
+                                "<thead><tr><th></th><th>ISBN</th><th>BOOK NAME</th><th>PRESS</th><th>PUBLISH TIME</th><th>AUTHOR</th><th>LOCATION</th><th>KEY 1</th><th>KEY 2</th><th>KEY 3</th></tr></thead>";
+                            output += "<tbody>";
+                            $.each(info, function (i, value) {
+                                output += "<tr>";
+                                output += "<td> <input type='checkbox' name='returnBook[]' value='" +value.ISBN+" " +value.BNAME+ "'> </td>";
+                                output += "<td>" + value.ISBN + "</td>";
+                                output += "<td>" + value.BNAME + "</td>";
+                                output += "<td>" + value.PRESS + "</td>";
+                                output += "<td>" + value.PTIME + "</td>";
+                                output += "<td>" + value.AUTHOR + "</td>";
+                                output += "<td>" + value.LOCATE + "</td>";
+                                output += "<td>" + value.KEY_1 + "</td>";
+                                output += "<td>" + value.KEY_2 + "</td>";
+                                output += "<td>" + value.KEY_3 + "</td>";
+                                output += "</tr>";
+                            });
+                            output += "</tbody></table>";
+                            output += "<button type='submit'>Reserve</button>";
+                            output += "</form>";
+                            $("#show1").html(output);
+                        }
+                    }
+                });
+            });
+        });
+
+        function inquiry_reserve(form) {
+            var fields = $('#form1').serialize();
+            $.ajax({
+                type: "POST",
+                url: "Reserve books.php",
+                data: fields,
+                async: false,
+                error: function (request) {
+                    alert("Error");
+                },
+                success: function (data) {
+                    alert("You have reserved successfully!")
+                }
+            });
+            return false;
+        }
+    </script>
+
+</head>
+
+<body class="size-1140">
+<header>
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand"></a>
+            </div>
+            <div class="collapse">
+                <ul class="navbar-right">
+                    <li><a href="customer_home_index.html">HOME</a></li>
+                    <li><a href="customer_reserve_index.html">RESERVATION</a></li>
+                    <li><a href="customer_all_record_index.html">HISTORY</a></li>
+                    <li><a href="customer_current_record_index.html">CURRENT RECORDS</a></li>
+                    <li><a href="login_index.html">LOG OUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<form>
+    <div class="lighter">
+        <div class="input-group">
+            <input type="text" name="input" class="search rounded" placeholder="Search for the books you want...">
+        </div>
+    </div>
+
+    <div class="input-group-btn">
+        <input type="radio" name="choice" value="value1">SEARCH BY TITLE&emsp;&emsp;&emsp;&emsp;
+        <input type="radio" name="choice" value="value2">SEARCH BY AUTHOR&emsp;&emsp;&emsp;&emsp;
+        <input type="radio" name="choice" value="value3">SEARCH BY KEYWORDS
+    </div>
+    <div class="button"><input type="button" id="button1" value="Search"></div>
+</form>
+<div class="back"></div>
+
+<div id="show1" class="output"></div>
+
+<div class="back"></div>
+</body>
+</html>
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Customer's current record</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: "POST",
+                url: "Search Current Book Records.php",
+                async: false,
+                error: function (request) {
+                    alert("ERROR");
+                },
+                success: function (data) {
+                    var info = JSON.parse(data);
+                    if (info == "") {
+                        alert("空");
+                    }
+                    else {
+                        var output = "<form id='form1' onsubmit='return inquiry_reserve(this)'>";
+                        output += "<table class=\"table table-bordered\">";
+                        output += "<tbody>";
+$j=0;
+                            $.each(info, function (i, value) {
+                                $j++;
+                                output += "<li>";
+                                if($j%2==0){
+                                    output += "<div class="+"direction-l"+">";
+                                    output +="<div class="+"flag-wrapper"+">";
+                                    output +="<span class="+"flag"+">"+value.BNAME+"</span>";
+                                    output+="<span class="+"time-wrapper"+">"+"<span class="+"time"+">"+value.STIME+"</span>"+"</span>"+"</div>";
+                                    output+="<div class="+"desc"+">"+value.ISBN+"<br>"+"<br>"+value.ETIME+"</div>";
+                                    output+="</div>";
+                                }
+                                else{
+                                    output += "<div class="+"direction-r"+">";
+                                    output +="<div class="+"flag-wrapper"+">";
+                                    output +="<span class="+"flag"+">"+value.BNAME+"</span>";
+                                    output+="<span class="+"time-wrapper"+">"+"<span class="+"time"+">"+value.STIME+"</span>"+"</span>"+"</div>";
+                                    output+="<div class="+"desc"+">"+value.ISBN+"<br>"+"<br>"+value.ETIME+"</div>";
+                                    output+="</div>";
+                                    }
+                                output +="</li>";
+                            });
+                            
+                            output += "</form>";
+                            $("#show1").html(output);
+                        }
+                }
+            });
+        });
+
+    </script>
+  
+      <link rel="stylesheet" href="customer_customer_record_main.css">
+    
+</head>
+
+<body>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+
+<!-- The Timeline -->
+<header>
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand"></a>
+            </div>
+            <div class="collapse">
+                <ul class="navbar-right">
+                    <li><a href="customer_home_index.html">HOME</a></li>
+                    <li><a href="customer_reserve_index.html">RESERVATION</a></li>
+                    <li><a href="customer_all_record_index.html">HISTORY</a></li>
+                    <li><a href="customer_current_record_index.html">CURRENT RECORD</a></li>
+                    <li><a href="login_index.html">LOG OUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    
+<div class="back">
+</div>
+
+<ul class="timeline">
+    <div id="show1"></div>
+</ul>
+ 
+<div class="back">
+</div>
+  
+</body>
+</html>

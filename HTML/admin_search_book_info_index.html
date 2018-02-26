@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin_search information about books</title>
+       <script src="./jquery-3.2.1.min.js"></script>
+     <script type="text/javascript">
+    $(document).ready(function () {
+	     $("#button1").click(function () {
+		    var ISBN = document.getElementById("ISBN").value; 
+            var BNAME = document.getElementById("BNAME").value;
+            var AUTHOR = document.getElementById("AUTHOR").value;
+            var KEY = document.getElementById("KEY").value;
+            var PRESS = document.getElementById("PRESS").value;
+            var PTIME = document.getElementById("PTIME").value;	
+            var TOTAL = document.getElementById("TOTAL").value;
+            var COPY = document.getElementById("COPY").value;
+            var LOCATE = document.getElementById("LOCATE").value;
+            if (COPY == "0") {
+                COPY = "zero";
+            }				
+			$.ajax({
+				type: "POST",
+				url: "./SearchBookInfo.php",
+				data: {
+					"ISBN" : ISBN,
+					"BNAME": BNAME,
+					"AUTHOR": AUTHOR,
+					"KEY": KEY,
+					"PRESS": PRESS,
+					"PTIME": PTIME,
+					"TOTAL": TOTAL,
+					"COPY": COPY,
+					"LOCATE": LOCATE
+				},
+				async: false,
+				error: function (request) {
+					alert("Wrong with the server!");
+				},
+				success: function (data) {
+				    //alert(data);
+					var output = "";
+					if (data != "0") {					
+					    var info = JSON.parse(data); // json object
+						output += "<table class=\"table table-bordered\">";
+						output +=
+							"<tr><th>ISBN</th><th>TITLE</th><th>AUTHOR</th><th>KEY1</th><th>KEY2</th>";
+						output += 
+							"<th>KEY3</th><th>PUBLISHER</th><th>PTIME</th><th>TOTAL</th><th>COPY</th><th>LOCATE</th></tr>";
+						output += "<tbody>";
+						$.each(info, function (i, value) {
+							output += "<tr>";
+							output += "<td>" + value.ISBN + "</td>";
+							output += "<td>" + value.BNAME + "</td>";
+							output += "<td>" + value.AUTHOR + "</td>";
+							output += "<td>" + value.KEY_1 + "</td>";
+							output += "<td>" + value.KEY_2 + "</td>";
+							output += "<td>" + value.KEY_3 + "</td>";
+							output += "<td>" + value.PRESS + "</td>";
+							output += "<td>" + value.PTIME + "</td>";
+							output += "<td>" + value.TOTAL + "</td>";
+							output += "<td>" + value.COPY + "</td>";
+							output += "<td>" + value.LOCATE + "</td>";
+							output += "</tr>";
+								});	
+						output += "</tbody></table>";							
+					}
+					$("#show1").html(output);
+				}
+			})
+	    })
+    })
+			
+	</script>
+    <link href="admin_search_book_info_main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="home">
+        <ul>
+            <li><a href="admin_page_index.html">HOME</a ></li>
+        </ul>
+    </div>
+  <form method="get">
+        <div class="ISBN">
+            ISBN : <input type="text" id="ISBN">
+        </div>
+        <div class="bname">
+            TITLE : <input type="text" id="BNAME">
+        </div>
+        <div class="author">
+            AUTHOR : <input type="text" id="AUTHOR">
+        </div>
+        <div class="key">
+            KEY : <input type="text" id="KEY">
+        </div>
+        <div class="press">
+            PUBLISHER : <input type="text" id="PRESS">
+        </div>
+        <div class="ptime">
+            PUBLISH TIME : <input type="text" id="PTIME">
+        </div>
+        <div class="total">
+            TOTAL : <input type="text" id="TOTAL">
+        </div>
+        <div class="copy">
+            COPY : <input type="text" id="COPY">
+        </div>
+        <div class="locate">
+            LOCATION : <input type="text" id="LOCATE">
+        </div>
+        <div class="button">
+          <input type="button" id="button1" value="Search">
+        </div>
+		
+	    <div id="show1" class="show1">
+        </div>
+    </form>
+	
+</body>
+</html>

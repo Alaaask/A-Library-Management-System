@@ -1,0 +1,44 @@
+body{
+    background: url(admin_customer_minus.png);
+}
+
+.id{
+  background-color: rgb(255, 255, 255);
+  font-family: "Andale Mono";
+  position: absolute;
+  left: 459px;
+  top: 384px;
+  width: 507px;
+  height: 66px;
+  z-index: 3;
+}
+
+.submit{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 630px;
+  top: 544px;
+  width: 165px;
+  height: 66px;
+  z-index: 5;
+}
+
+.home ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0,0,0);
+  line-height: 1.2;
+  position: absolute;
+  left: 1198px;
+  top: 10px;
+  width: 112px;
+  height: 35px;
+  z-index: 4;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+.home ul li a:hover{
+  opacity: 1;
+}

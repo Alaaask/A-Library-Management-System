@@ -1,0 +1,130 @@
+body{
+    background: url(login.png);
+}
+
+nav {
+	position: absolute;
+	width: 100%;
+    background: #020202;
+    z-index:99;
+    height: 150px;
+    top:0px;
+    left: 0px;
+}
+.navbar-brand{
+  background-image: url("login_logo.png");
+  position: absolute;
+  left: 55px;
+  top: 30px;
+  width: 250px;
+  height: 100px;
+  z-index: 3;
+}
+
+header nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;  
+    display: flex;
+}
+
+header nav ul li a{
+  float: left;
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  line-height: 190px;
+  padding:26px;
+  text-decoration: none;
+  opacity: 0.4;
+  transition: opacity .25s;
+}
+
+header nav ul li a:hover{
+    opacity: 1;
+}
+
+input.form-control {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 850px;
+  top: 380px;
+  width: 344px;
+  height: 51px;
+  z-index: 2;
+}
+input.fromcontrol{ 
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 850px;
+  top: 450px;
+  width: 344px;
+  height: 51px;
+  z-index: 3;
+}
+
+button {
+  overflow: visible;
+  font-size: 24px;
+  font-family: "Andale Mono";
+  color: rgb(252, 250, 250);
+  line-height: 1.2;
+  position: absolute;
+  left: 950px;
+  top: 600px;
+  width: 82px;
+  height: 18px;
+  z-index: 6;
+}
+
+button {
+  text-transform: capitalize;
+  height: 50px;
+  width: 105px;
+  background-color: #654c82;
+  top:550px;
+  left:975px;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}

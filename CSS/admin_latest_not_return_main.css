@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #c3bcce;
+  color: #323232;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 112.5%;
+  line-height: 1.6em;
+  background: url(admin_latest_not_return.png);
+}
+
+.show1{
+  position: absolute;
+  left: 370px;
+  top: 250px;
+  z-index: 3;
+  background: url(customer_home_bodyback.png);
+}
+
+.home ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 1198px;
+  top: 10px;
+  width: 112px;
+  height: 35px;
+  z-index: 4;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+
+.home ul li a:hover{
+    opacity: 1;
+}

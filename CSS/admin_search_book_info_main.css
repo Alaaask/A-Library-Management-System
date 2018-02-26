@@ -1,0 +1,132 @@
+body{
+    background: url(admin_search_book_info_back.png);
+}
+
+.ISBN{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 274px;
+  top: 297px;
+  width: 371px;
+  height: 66px;
+  z-index: 2;
+}
+
+.bname{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 274px;
+  top: 337px;
+  width: 371px;
+  height: 66px;
+  z-index: 2;
+}
+
+.author{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 274px;
+  top: 377px;
+  width: 371px;
+  height: 66px;
+  z-index: 2;
+}
+
+.key{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 274px;
+  top: 417px;
+  width: 371px;
+  height: 66px;
+  z-index: 2;
+}
+
+.press{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 274px;
+  top: 457px;
+  width: 371px;
+  height: 66px;
+  z-index: 2;
+}
+
+.ptime{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 771px;
+  top: 337px;
+  width: 371px;
+  height: 66px;
+  z-index: 2;
+}
+
+.total{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 771px;
+  top: 377px;
+  width: 371px;
+  height: 66px;
+  z-index: 2;
+}
+
+.copy{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 771px;
+  top: 417px;
+  width: 371px;
+  height: 66px;
+  z-index: 2;
+}
+
+.locate{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 771px;
+  top: 457px;
+  width: 371px;
+  height: 66px;
+  z-index: 2;
+}
+
+.button{
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 650px;
+  top: 530px;
+  width: 185px;
+  height: 68px;
+  z-index: 3;
+}
+
+.home ul li a{
+  font-size: 27.778px;
+  font-family: "Andale Mono";
+  color: rgb(0, 0, 0);
+  line-height: 1.2;
+  position: absolute;
+  left: 1198px;
+  top: 10px;
+  width: 112px;
+  height: 35px;
+  z-index: 4;
+  opacity: .4;
+  transition: opacity .25s;
+  text-decoration: none;
+}
+
+
+.home ul li a:hover{
+    opacity: 1;
+}
+
+.show1{
+  position: absolute;
+  top:600px;
+  left:320px;
+  z-index: 3;
+  background: url(customer_home_bodyback.png);
+}

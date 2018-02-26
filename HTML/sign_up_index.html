@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Library!</title>
+    <link href ="sign_up_main.css" rel="stylesheet">
+        <script src="./jquery-3.2.1.min.js"></script>
+    <script>  
+    $(document).ready(function () { 	
+		$('#button1').click(function(){  
+		    //window.location.href="customer_home_index.html";
+		    //alert("here!");
+			var username = $('#user-name').val();  
+			var password = $("#user-password").val();
+			var email = $('#user-email').val();
+			
+		    if(username!="" && password!="" && email!=""){  
+			    if(!checkEmail(email)) {
+				    alert ("Invalid email address.");
+					}
+				else {
+					$.ajax({  
+						type: "post",
+						url: "./SignUp.php",
+						async: false,
+						data:{  
+							"username":username,  
+							"password":password,
+							"email":email
+						}, 
+						error: function (request) {
+							alert("Wrong with the server!");
+						},
+						success:function(data){						
+							switch(data){  
+								case "1"://用户已存在  
+									alert("User already exists!")  
+									break;  
+								case "2"://注册成功 
+                                    window.location.href="customer_home_index.html"; 									
+									alert("Successfully registered!");  
+									//$.cookie("user",username);  
+									//$.cookie("limit",0);  
+									break;
+								case "3":
+								    alert("Execution error.");
+									break;
+								default:
+								    alert("Unexpected error.");
+							}  
+							  
+						}  
+					})
+                }					
+			}else{  
+				alert("Your information is incomplete.");  
+			}  
+		})
+	
+	function checkEmail(email){  
+        var patten = new RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/);       
+        if(!patten.test(email)){  
+            return false;  
+        }  
+        return true ;   
+    }
+
+	
+    })
+	
+</script>
+</head>
+
+<body>
+<header>
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand"></a>
+            </div>
+            <div class="collapse">
+                <ul class="navbar-right">
+                    <li><a href="#c">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <div class="login">
+        <div class="logini">
+            <form>
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <label>User</label><input type="text" id="user-name"  class="user" required="required"placeholder="ID">
+                    </div>
+                <div class="col-md-12 col-sm-12">
+                    <label>Password</label><input type="text" id="user-password"  class="passw" required="required"placeholder="PASSWORD">
+                    </div>
+                </div>
+                 <div class="col-md-12 col-sm-12">
+                    <label>Email</label><input type="text" id="user-email" class="email" required="required"placeholder="EMAIL">
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="SubBotton">
+                        <button type="button" class="btn btn-success" id="button1">SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

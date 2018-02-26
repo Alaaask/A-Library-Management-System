@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Admin_borrow record</title>
+  
+    <link rel="stylesheet" href="admin_borrow_records_main.css">
+	
+	    <script src="./jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "./InquiryBorrow.php",
+					async: false,
+                    data:$("form").serialize(),
+                    error: function (request) {
+                        alert("Wrong with the server!");
+                    },
+                    success: function (data) {
+					 //alert(data);
+					 var info = JSON.parse(data); // json object
+                        if (info == "") {
+                            alert("No data or something wrong with input.");
+                        } else {
+						    output = "";
+                            $.each(info, function (i, value) {
+                                output += "ISBN: "+value.ISBN+" ";
+                                output += "RID: "+value.RID+" ";
+								output += "Starttime: "+value.STIME+" ";
+								output += "Done: "+value.DONE+" ";
+                                output += "Endtime: "+value.ETIME+" ";
+                                output += "<br>";
+                            })
+							$("#show1").html(output);
+						}
+					}
+				})
+			})
+		})
+    </script>
+
+</head>
+
+<body>
+    <div class="home">
+        <ul>
+            <li><a href="admin_page_index.html">HOME</a ></li>
+        </ul>
+    </div>
+<div class="title">
+    <p>RECORDS</p>
+</div>
+
+<form method="get">
+        <div class="ISBN">
+            ISBN : <input type="text" name="ISBN">
+        </div>
+        <div class="bname">
+            READER ID : <input type="text" name="RID">
+        </div>
+        <div class="author">
+            START TIME : <input type="text" name="starttime">
+        </div>
+	    <div class="button">
+          <input type="button" id="button1" value="Search">
+        </div>
+    </form>
+		
+		<div id="show1" class="show1">
+        </div>
+
+</body>
+</html>

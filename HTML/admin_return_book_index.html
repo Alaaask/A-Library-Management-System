@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin_return a book</title>
+    <link href="admin_return_book_main.css" rel="stylesheet">
+       <script src="./jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "./EditReturn.php",
+					async: false,
+                    data:$("form").serialize(),
+                    error: function (request) {
+                        alert("Wrong with the server!");
+                    },
+                    success: function (data) {
+					 alert(data);
+					}
+				})
+			})
+		})
+    </script>
+</head>
+    
+<body>
+    
+	<div class="home">
+        <ul>
+            <li><a href="admin_page_index.html">HOME</a ></li>
+        </ul>
+    </div>
+	
+    <form>
+        <div class="id">
+            READER ID : <input type="text" name="id">
+        </div>
+        <div class="bkid">
+            ISBN : <input type="text" name="bkid">
+        </div>
+        <div class="button">
+           <input type="button" id="button1" value="Return">
+        </div>
+    </form>
+
+</body>
+</html>

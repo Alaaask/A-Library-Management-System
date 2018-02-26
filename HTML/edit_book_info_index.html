@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="./jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button1").click(function () {
+                $.ajax({
+                    type: "post",
+                    url: "./EditBookInfo.php",
+					async: false,
+                    data:$("form").serialize(),
+                    error: function (request) {
+                        alert("Wrong with the server!");
+                    },
+                    success: function (data) {
+					alert(data);
+					}
+				})
+			})
+		})
+    </script>
+    <title>Admin_update informantion about a book</title>
+    <link href="edit_book_info_main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="home">
+        <ul>
+            <li><a href="admin_page_index.html">HOME</a ></li>
+        </ul>
+    </div>
+ <form>
+      <div class="isbn">
+           ISBN : <input type="text" name="ISBN">(NOT NULL)
+        </div>
+       <div class="title">
+           TOTAL : <input type="text" name="total">
+        </div>
+       <div class="press">
+           COPY : <input type="text" name="copy">
+        </div>
+       <div class="preestime">
+           LOCATION : <input type="text" name="location">
+        </div>
+       <div class="copy">
+           KEY1 : <input type="text" name="key1">
+       </div>
+       <div class="loc">
+           KEY2 : <input type="text" name="key2">
+       </div>
+       <div class="key">
+           KEY3 : <input type="text" name="key3">
+       </div>
+       <div class="button">
+            <input type="button" id="button1" value="Update">
+       </div>
+    </form>
+
+</body>
+</html>
